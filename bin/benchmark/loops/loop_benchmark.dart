@@ -4,8 +4,6 @@ import 'package:meta/meta.dart';
 
 import 'package:benchmark_harness/benchmark_harness.dart';
 
-import 'package:isolates_course/repository/repository_callable.dart/repository_callable.dart';
-
 void main(List<String> args) async {
   ForInLoopBenchmark().report();
   MapBenchmark().report();
@@ -52,8 +50,6 @@ final class ForInLoopBenchmark extends LoopBenchmark {
 final class MapToListBenchmark extends LoopBenchmark {
   MapToListBenchmark() : super(".map().toList(): ");
 
-  late RepositoryCallable repository;
-
   @override
   void run() async {
     iterable
@@ -67,8 +63,6 @@ final class MapToListBenchmark extends LoopBenchmark {
 final class MapBenchmark extends LoopBenchmark {
   MapBenchmark() : super(".map(): ");
 
-  late RepositoryCallable repository;
-
   @override
   void run() async {
     iterable.map(
@@ -79,8 +73,6 @@ final class MapBenchmark extends LoopBenchmark {
 
 final class ForLoopBenchmark extends LoopBenchmark {
   ForLoopBenchmark() : super("for(i;iterable:i--): ");
-
-  late RepositoryCallable repository;
 
   @override
   void run() async {
@@ -93,8 +85,6 @@ final class ForLoopBenchmark extends LoopBenchmark {
 
 final class ForEachBenchmark extends LoopBenchmark {
   ForEachBenchmark() : super("forEach");
-
-  late RepositoryCallable repository;
 
   @override
   void run() async {
